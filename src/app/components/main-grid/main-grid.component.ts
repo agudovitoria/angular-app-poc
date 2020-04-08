@@ -6,7 +6,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./main-grid.component.scss']
 })
 export class MainGridComponent implements OnInit {
+  openedSidebar: boolean;
+
   constructor() {
+    this.openedSidebar = false;
+  }
+
+  onSidebarToggle() {
+    this.openedSidebar = !this.openedSidebar;
   }
 
   ngOnInit(): void {

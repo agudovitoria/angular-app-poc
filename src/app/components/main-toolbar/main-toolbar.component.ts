@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-main-toolbar',
@@ -7,10 +7,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MainToolbarComponent implements OnInit {
 
+  @Output() toggleSidebar: EventEmitter<null>;
+
   constructor() {
+    this.toggleSidebar = new EventEmitter<null>();
   }
 
   ngOnInit(): void {
+  }
+
+  toggleMenu() {
+    this.toggleSidebar.emit();
   }
 
 }

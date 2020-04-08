@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main-sidebar',
@@ -7,12 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MainSidebarComponent implements OnInit {
   events: string[] = [];
-  opened: boolean;
+
+  @Input() openedSidebar: boolean;
 
   constructor() {
   }
 
   ngOnInit(): void {
   }
-
 }

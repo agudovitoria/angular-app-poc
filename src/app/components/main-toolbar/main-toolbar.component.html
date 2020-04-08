@@ -1,7 +1,13 @@
+<script src="main-toolbar.component.ts"></script>
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span><mat-icon aria-hidden="false" aria-label="Menu icon">menu</mat-icon></span>
+    <button (click)="toggleMenu()"
+            mat-button>
+      <mat-icon aria-hidden="false" aria-label="Menu icon">menu</mat-icon>
+    </button>
+
     <span class="spacer"></span>
+
     <mat-icon aria-hidden="false" aria-label="Example heart icon" class="icon">favorite</mat-icon>
     <mat-icon aria-hidden="false" aria-label="Example delete icon" class="icon">delete</mat-icon>
   </mat-toolbar-row>
