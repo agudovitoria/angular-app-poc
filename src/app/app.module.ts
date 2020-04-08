@@ -12,6 +12,11 @@ import {MainSidebarComponent} from './components/main-sidebar/main-sidebar.compo
 import {ContentGridComponent} from './components/content-grid/content-grid.component';
 import {LoggerModule, NgxLoggerLevel} from "ngx-logger";
 import {HttpClientModule} from "@angular/common/http";
+import {MainMenuComponent} from './components/main-menu/main-menu.component';
+import {RouterModule} from "@angular/router";
+import {routes} from "./app.routes";
+import {HomeComponent} from './components/home/home.component';
+import {InvoicesComponent} from './components/invoices/invoices.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,9 @@ import {HttpClientModule} from "@angular/common/http";
     MainToolbarComponent,
     MainSidebarComponent,
     ContentGridComponent,
+    MainMenuComponent,
+    HomeComponent,
+    InvoicesComponent,
   ],
   imports: [
     HttpClientModule,
@@ -32,8 +40,10 @@ import {HttpClientModule} from "@angular/common/http";
       level: NgxLoggerLevel.TRACE,
       serverLogLevel: NgxLoggerLevel.ERROR,
       disableConsoleLogging: false
-    })
+    }),
+    RouterModule.forRoot(routes, {enableTracing: true})
   ],
+  exports: [RouterModule],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},
   ]

@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item
+    *ngFor="let entry of entries;"
+    [routerLink]="entry.path">
+    <span>{{ entry.text }}</span>
+  </mat-list-item>
+</mat-list>

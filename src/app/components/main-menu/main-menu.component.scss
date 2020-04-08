@@ -1,0 +1,10 @@
+@import "src/styles";
+
+.mat-list-item {
+  outline: none !important;
+
+  &:hover {
+    cursor: pointer;
+    background-color: mat-color($app-primary, 100) !important;
+  }
+}
